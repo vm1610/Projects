@@ -1,38 +1,44 @@
-console.log("This is my script")
+console.log("This is my script");
 
-let result={
-    "tag":"",
-    "free":false,
-    "role": false,
-    "user":"Vasu Manocha",
-    "email": "vasumanocha01@gmail.com",
-    "score": 0.64,
-    "state": "undeliverable",
-    "domain":"",
-    "reason": "invalid_mailbox",
-    "mx_found": true,
-    "catch_all": null,
-    "disposable": false,
-    "smtp_check": false,
-    "did_you_mean": "",
-    "format_valid": true
-}
-submitBtn.addEventListener("click", async (e) => {
-    e.preventDefault()
-    console.log("Clicked!")
-    resultCont.innerHTML = `<img width="123" src="img/loading.svg" alt="">`
-    let key = "ema_live_ITkV5Pqq40WNdMLdjqMZlNcb4AEBrNvWiSFd1MYE"
-    let email = document.getElementById("username").value 
-    let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${email}`
-    let res = await fetch(url)
-    let result = await res.json()
-    let str = ``
-    for (key of Object.keys(result)) {
-        if(result[key] !== "" && result[key]!== " "){ 
-            str = str + `<div>${key}: ${result[key]}</div>`
+let result = {
+  tag: "",
+  free: false,
+  role: false,
+  user: "Vasu Manocha",
+  email: "vasumanocha01@gmail.com",
+  score: 0.64,
+  state: "undeliverable",
+  domain: "",
+  reason: "invalid_mailbox",
+  mx_found: true,
+  catch_all: null,
+  disposable: false,
+  smtp_check: false,
+  did_you_mean: "",
+  format_valid: true,
+};
+document.getElementById('emailForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const resultCont = document.getElementById('resultCont');
+    resultCont.innerHTML = `<img width="30" src="img/load.svg" alt="Loading...">`; // Adjust the size here
+
+    const email = document.getElementById('username').value;
+    const key = "ema_live_jLtUNKdVOxgA05t1ysIH48rp0HtyyuIRgzdvaFyX";
+    const url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${email}`;
+    
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        let output = '';
+
+        for (const key in result) {
+            if (result[key]) {
+                output += `<div><strong>${key}:</strong> ${result[key]}</div>`;
+            }
         }
-    }
 
-    console.log(str)
-    resultCont.innerHTML = str
-})
+        resultCont.innerHTML = output || '<div>No results found</div>';
+    } catch (error) {
+        resultCont.innerHTML = `<div>Error fetching results: ${error.message}</div>`;
+    }
+});
