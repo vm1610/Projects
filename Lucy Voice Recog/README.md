@@ -2,54 +2,47 @@
 
 ## Project Overview
 
-Lucy is a digital voice assistant designed to perform various tasks based on voice commands. It can open applications, send emails, play music, and provide information using voice recognition technology.
+Lucy is a digital voice assistant that can perform various tasks based on voice commands. It integrates speech recognition with several functionalities like opening websites, sending emails, and playing music.
 
 ## Features
 
-- **Voice Commands:** Listens and responds to a range of voice commands.
-- **Email Sending:** Allows sending emails directly via voice commands.
-- **Application Control:** Opens websites like YouTube, Google, and Gmail.
-- **Music Playback:** Plays music from a specified folder.
-- **Information Retrieval:** Retrieves information from WolframAlpha or Wikipedia based on queries.
+- **Voice Commands:** Responds to voice commands for various actions like opening websites, sending emails, and playing music.
+- **Speech Recognition:** Utilizes Google Speech Recognition for understanding user commands.
+- **Text-to-Speech:** Uses pyttsx3 for converting text responses into speech.
+- **Email Integration:** Sends emails based on voice commands.
 
 ## Tech Stack
 
 - **Languages:** Python
 - **Libraries:** 
   - `pyttsx3` for text-to-speech
-  - `speech_recognition` for voice input
-  - `wikipedia` for information retrieval
-  - `wolframalpha` for answering queries
-  - `smtplib` for sending emails
+  - `speech_recognition` for voice recognition
   - `webbrowser` for opening websites
-  - `os` for playing music
+  - `smtplib` for sending emails
 
-## How to Use
+## Setup and Usage
 
 1. **Install Dependencies:**
    - Ensure you have Python installed.
    - Install required libraries using pip:
      ```bash
-     pip install pyttsx3 speechrecognition wikipedia wolframalpha
+     pip install pyttsx3 SpeechRecognition wikipedia
      ```
 
-2. **Setup:**
-   - Update the `Your_Username`, `Your_Password`, and `Your_music_folder_path` placeholders in the `lucy.py` script with your Gmail credentials and music folder path.
-
-3. **Run the Assistant:**
-   - Execute the `lucy.ipynb` script using Python:
+2. **Run the Assistant:**
+   - Execute `lucy_assistant.py` to start Lucy and begin interacting with the voice assistant:
      ```bash
-     python lucy.py
+     python lucy_assistant.py
      ```
-   - Start giving voice commands. For example, you can say "open YouTube," "send an email," or "play music."
 
-## Example Commands
+## Potential Enhancements
 
-- "Open YouTube" - Opens YouTube in your default web browser.
-- "Send an email" - Sends an email after asking for recipient and content.
-- "Play music" - Plays a random music file from the specified folder.
-- "What's up?" - Provides a random status message.
+- **Enhanced Natural Language Processing:** Integrate advanced NLP capabilities for more nuanced understanding and interaction.
+- **Additional Functionalities:** Add more features such as setting reminders, weather updates, or smart home controls.
+- **Custom Wake Words:** Implement custom wake words to activate the assistant.
+- **User Profiles:** Support multiple user profiles with personalized responses and settings.
+- **Voice Command Expansion:** Increase the range of voice commands and actions Lucy can perform.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is open-source and distributed under the terms of the MIT License.
