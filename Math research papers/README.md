@@ -1,5 +1,4 @@
-# Reaction Diffusion
-
+# MAth Papers
 ## Overview
 
 This folder contains research papers related to reaction-diffusion models, a key area of study in mathematical biology and pattern formation. The collection includes four research papers:
