@@ -22,14 +22,14 @@ eVerify is a web-based tool designed to validate email addresses for businesses 
 1. **Setup:**
    - Clone the repository and navigate to the `eVerify` directory:
      ```bash
-     git clone https://github.com/yourusername/Projects.git
+     git clone https://github.com/vm1610/Projects.git
      cd Projects/everify
      ```
 
 2. **API Key:**
    - Create a `.env` file and add your Email Validation API key:
      ```
-     EMAIL_API_KEY=your_api_key_here
+     EMAIL_API_KEY=ema_live_jLtUNKdVOxgA05t1ysIH48rp0HtyyuIRgzdvaFyX
      ```
 
 3. **Run the Application:**
