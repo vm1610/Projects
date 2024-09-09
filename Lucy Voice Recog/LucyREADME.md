@@ -37,7 +37,7 @@ Lucy is a digital voice assistant designed to perform various tasks based on voi
    - Update the `Your_Username`, `Your_Password`, and `Your_music_folder_path` placeholders in the `lucy.py` script with your Gmail credentials and music folder path.
 
 3. **Run the Assistant:**
-   - Execute the `lucy.py` script using Python:
+   - Execute the `lucy.ipynb` script using Python:
      ```bash
      python lucy.py
      ```
